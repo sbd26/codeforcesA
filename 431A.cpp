@@ -14,7 +14,7 @@ int main()
 	int ans = 0;
 	cin >> a >> b >> c >> d;
 	cin >> s;
-	for (int i = 0; i < s.size();i++)
+	for (int i = 0; i < s.siz();i++)
 	{
 		if ( s[i] == '1')
 		ans += a;
