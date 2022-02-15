@@ -3,23 +3,24 @@
  * Ins    : Northern University of Bangladesh
  */
 
-#include<bits/stdc++.h>
+#include<iostream>
 using namespace std;
+
+int aa (int a,int b)
+{
+	int ct = 0;
+	if ( a == 1 || b == 1)
+	return 1;
+	cout << a << b << endl;
+	return aa(a-1,b) + aa ( a,b-1);
+	
+	
+}
 
 
 int main()
 {
-	vector <int> v(5);
-	for ( int i = 0; i < 5 ; i++)
-	cin >> v[i];
-	vector <int> :: iterator aa = v.begin();
-	printf("%x",aa);
-	vector <int> :: iterator bb = (v.begin() + 1);
-	printf("\n%x",bb);
-	vector <int> :: iterator cc = (v.begin()+2);
-	printf("\n%x",cc);
-	
-	
+	cout << "Hello world";
 	
 	return 0;
 }
