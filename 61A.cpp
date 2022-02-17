@@ -8,24 +8,6 @@ using namespace std;
 
 
 
-int d2b(int N)
-{
- 
-    // To store the binary number
-    int B_Number = 0;
-    int cnt = 0;
-    while (N != 0) {
-        int rem = N % 2;
-        ull c = pow(10, cnt);
-        B_Number += rem * c;
-        N /= 2;
- 
-        // Count used to store exponent value
-        cnt++;
-    }
- 
-    return B_Number;
-}
 
 int main()
 {
@@ -33,12 +15,13 @@ int main()
 	cin.tie(NULL);
 	
 	string a,b; cin >> a >> b;
-	int decA , decB;
-	decA = stoi(a, 0, 2);
-	decB = stoi(b, 0, 2);
-	int x = decA ^ decB;
-	cout << d2b(x);
-	
-	
+	for ( int i = 0; i < a.size(); i++)
+	{
+		if ( a[i] == b[i])
+			a[i] = '0';
+		else 
+			a[i] = '1';
+	}
+	cout << a;
 	return 0;
 }
