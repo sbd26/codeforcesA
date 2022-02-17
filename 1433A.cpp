@@ -19,8 +19,7 @@ int main()
 	{
 		int a; cin >> a;
 		int ans = 0;
-		int reminder = a % 10;
-		ans = (reminder - 1) * 10;
+		ans = ((a % 10) - 1) * 10;
 			for ( int i = 1; a; i++)
 			{
 				 ans += i;
