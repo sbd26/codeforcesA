@@ -3,7 +3,8 @@
  * Ins    : Northern University of Bangladesh
  */
 
-#include<bits/stdc++.h>
+#include<iostream>
+#include<string>
 using namespace std;
 
 
@@ -15,39 +16,47 @@ int main()
 	while (tt--)
 	{
 		string s;
-		int door = 0, key = 0;
 		cin >> s;
-		if ( s[0] == 'R' || s[0] == 'G' || s[0] == 'B')
-			cout << "NO" << endl;
-		else
+		int r = 0, g = 0, b = 0,counter = 0; 
+		for ( int i = 0; s[i] != '\0'; i++)
+		{
+			if ( s[i] == 'r') r++;
+			 else if ( s[i] == 'g') g++;
+			 else if ( s[i] == 'b') b++;
+			 else if ( s[i] == 'R')
 			{
-				for  ( int i = 0; i < s.size(); i++)
-				{
-					if ( s[i] == 'r'){
-						for ( int j = i + 1; j < s.size(); j++)
-							if ( s[j] == 'R')
-								key++;
-							}
-					else if ( s[i] == 'g') {
-						for ( int k = i + 1; k < s.size(); k++)
-							if ( s[k] == 'G')
-								key++;
-							}
-					else if ( s[i] == 'b'){
-						for ( int l = i + 1; l < s.size(); l++)
-							if ( s[l] == 'B')
-								key++;
-					}
-					else
-						door++;
-					}
-					if ( door - key == 0 )
-						cout << "YES" << endl;
+				if (r > 0)
+					counter++;
 					else 
-					cout << "NO" << endl;
-					
+						break;
 				}
+			 else if ( s[i] == 'G'){
+				if ( g > 0)
+					counter++;
+				else 
+					break;
+				}
+					
+			
+			 else if ( s[i] == 'B')
+			{
+				if ( b > 0)
+					counter++;
+				else break;
+				
+				
+				}
+				
+			
+			
 			}
+			if ( counter == 3)
+				cout << "YES" << endl;
+			else 
+				cout << "NO" << endl;
+		
+		
+	}
 		
 	
 	
